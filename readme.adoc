@@ -9,4 +9,5 @@ Elements:
 * v-else
 * v-show - rendert immer und setzt nur display auf false, wenn Bedingung nicht erfüllt ist
 * v-model
+* Web-Komponenten nutzen
 

@@ -36,6 +36,10 @@
       <input v-model="participantCount" placeholder="0" type="number"/>
       <button @click="addEvent">Hinzufügen</button>
     </div>
+
+    <div v-for="event in events" :key="event.id">
+      <event-item :event="event" />
+    </div>
   </div>
 
 
@@ -78,7 +82,20 @@
       }
     };
 
-    Vue.createApp(FirstVueApp).mount('#first-app');
+    const firstApp = Vue.createApp(FirstVueApp);
+    firstApp.component('event-item', {
+      props: ['event'],
+      template:
+              `<p>
+              ID: {{ event.id }}
+              <br />
+              Name: {{ event.name }}
+              <br />
+              Anzahl Teilnehmende: {{ event.participantCount }}
+              </p>`
+    });
+
+    firstApp.mount('#first-app');
   </script>
 </body>
 </html>
