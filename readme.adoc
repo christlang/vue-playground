@@ -1,3 +1,12 @@
 
 learning vue
 
+Elements:
+
+* v-for
+* v-if
+* v-else-if
+* v-else
+* v-show - rendert immer und setzt nur display auf false, wenn Bedingung nicht erfüllt ist
+
+

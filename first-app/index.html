@@ -21,9 +21,14 @@
         Anzahl Teilnehmende: {{ event.participantCount }}
       </p>
     </div>
-    <ul>
-      <li v-for="event in events" :key="event.id">{{ event.id }}. {{ event.name }} ( {{ event.participantCount }})</li>
-    </ul>
+    <div v-if="events.length > 0">
+      <ul>
+        <li v-for="event in events" :key="event.id">{{ event.id }}. {{ event.name }} ( {{ event.participantCount }})</li>
+      </ul>
+    </div>
+    <div v-else>
+      <span>too few</span>
+    </div>
   </div>
 
 
