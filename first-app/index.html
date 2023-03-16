@@ -11,7 +11,23 @@
   <!-- mount the app -->
   <div id="first-app">
     <p>{{ info }}</p>
+
+    <div v-for="event in events">
+      <p>
+        ID: {{ event.id }}
+        <br />
+        Name: {{ event.name }}
+        <br />
+        Anzahl Teilnehmende: {{ event.participantCount }}
+      </p>
+    </div>
+    <ul>
+      <li v-for="event in events">{{ event.id }}. {{ event.name }} ( {{ event.participantCount }})</li>
+    </ul>
   </div>
+
+
+
   <!-- vue-lib -->
   <script src="https://unpkg.com/vue@3"></script>
   <!-- use with imports -->
@@ -27,7 +43,13 @@
     const FirstVueApp = {
       data() {
         return {
-          info: 'content from vue-instance...'
+          info: 'content from vue-instance...',
+          events: [
+            { id: 1, name: 'Veranstaltung 1', participantCount: 7 },
+            { id: 2, name: 'Veranstaltung 2', participantCount: 9 },
+            { id: 3, name: 'Veranstaltung 3', participantCount: 13 },
+            { id: 4, name: 'Veranstaltung 4', participantCount: 22 },
+          ]
         };
       },
     };
