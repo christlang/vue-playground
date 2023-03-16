@@ -29,6 +29,13 @@
     <div v-else>
       <span>too few</span>
     </div>
+
+    <div>
+      Neue Veranstaltung hinzufügen: {{ eventName }}
+      <input v-model="eventName" placeholder="Name der Veranstaltung" />
+      <input v-model="participantCount" placeholder="0" type="number"/>
+      <button @click="addEvent">Hinzufügen</button>
+    </div>
   </div>
 
 
@@ -57,6 +64,18 @@
           ]
         };
       },
+      methods: {
+        addEvent() {
+          console.log('Veranstaltung hinzufügen', this.eventName);
+          this.events.push({
+            id: this.events.length + 1,
+            name: this.eventName,
+            participantCount: this.participantCount
+          })
+          this.eventName = '';
+          this.participantCount = 0;
+        }
+      }
     };
 
     Vue.createApp(FirstVueApp).mount('#first-app');
