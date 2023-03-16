@@ -12,7 +12,7 @@
   <div id="first-app">
     <p>{{ info }}</p>
 
-    <div v-for="event in events">
+    <div v-for="event in events" :key="event.id">
       <p>
         ID: {{ event.id }}
         <br />
@@ -22,7 +22,7 @@
       </p>
     </div>
     <ul>
-      <li v-for="event in events">{{ event.id }}. {{ event.name }} ( {{ event.participantCount }})</li>
+      <li v-for="event in events" :key="event.id">{{ event.id }}. {{ event.name }} ( {{ event.participantCount }})</li>
     </ul>
   </div>
 
@@ -48,7 +48,7 @@
             { id: 1, name: 'Veranstaltung 1', participantCount: 7 },
             { id: 2, name: 'Veranstaltung 2', participantCount: 9 },
             { id: 3, name: 'Veranstaltung 3', participantCount: 13 },
-            { id: 4, name: 'Veranstaltung 4', participantCount: 22 },
+            { id: 4, name: 'Veranstaltung 4', participantCount: 23 },
           ]
         };
       },
