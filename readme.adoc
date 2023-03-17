@@ -28,3 +28,27 @@ npx @vue/cli create .
 npm run serve
 
 ----
+
+== vite
+
+* https://vuejs.org/guide/scaling-up/tooling.html#project-scaffolding
+
+[source,bash]
+----
+npm init vue@latest
+# Project name: vite-example
+# TypeScript: Yes
+# JSX: No
+# Add Vue Router for SPA dev: No
+# Pinia for state management: No
+# Add Vitest for unit testing: Yes
+# End-to-End Testing: Cypress
+# Eslint: Yes
+# Prettier: Yes
+cd vite-example
+npm install
+npm run dev
+npm run test:unit
+npm run test:e2e:dev # against dev build
+npm run test:e2e     # against prod build
+----
