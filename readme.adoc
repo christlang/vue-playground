@@ -11,3 +11,20 @@ Elements:
 * v-model
 * Web-Komponenten nutzen
 
+== vui-cli
+
+maintenance mode
+
+* https://vuejs.org/guide/scaling-up/tooling.html
+
+* webpack based
+* beter use vite
+
+[source,bash]
+----
+npx @vue/cli create .
+# create in current dir: Y
+# presets: Vue 3, babel, eslint
+npm run serve
+
+----
