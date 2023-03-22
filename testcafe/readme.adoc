@@ -1,0 +1,12 @@
+
+
+Testcafe to automate e2e tests not only for vue...
+
+* https://testcafe.io/documentation/402635/guides/overview/getting-started[Getting Started]
+
+[source,bash]
+----
+npm init
+npx create-testcafe
+npx testcafe chrome
+----
