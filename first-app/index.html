@@ -32,9 +32,9 @@
 
     <div>
       Neue Veranstaltung hinzufügen: {{ eventName }}
-      <input v-model="eventName" placeholder="Name der Veranstaltung" />
-      <input v-model="participantCount" placeholder="0" type="number"/>
-      <button @click="addEvent">Hinzufügen</button>
+      <input id="add-name" v-model="eventName" placeholder="Name der Veranstaltung" />
+      <input id="add-participant-count" v-model="participantCount" placeholder="0" type="number"/>
+      <button id="add-button" @click="addEvent">Hinzufügen</button>
     </div>
 
     <div v-for="event in events" :key="event.id">
