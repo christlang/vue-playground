@@ -1,3 +1,5 @@
+:toc:
+
 
 learning vue
 
@@ -52,3 +54,10 @@ npm run test:unit
 npm run test:e2e:dev # against dev build
 npm run test:e2e     # against prod build
 ----
+
+
+== Lern-Quellen
+
+* vujs
+** https://vuejs.org/guide/introduction.html[Guide] -> vuejs/guide
+** https://vuejs.org/tutorial/#step-1[Tutorial]
