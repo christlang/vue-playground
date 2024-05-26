@@ -1,0 +1,9 @@
+
+ES Module können nur über http:// ausgeliefert werden nicht über file://.
+Daher brauchen wir einen Webserver.
+Am einfachsten kommt man über `npx serve` an einen webserver.
+
+[source,bash]
+----
+npx serve
+----
