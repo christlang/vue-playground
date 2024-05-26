@@ -12,13 +12,14 @@
     }
 </script>
 
-<div id="app">{{ message }}</div>
+<div id="app"></div>
 
 <script type="module">
     import { createApp } from 'vue'
-    import MyComponent from './my-component.js'
+    import MyCounter from './my-counter.js'
 
-    createApp(MyComponent).mount('#app')
+    const app = createApp(MyCounter);
+    app.mount('#app')
 </script>
 </body>
 </html>
