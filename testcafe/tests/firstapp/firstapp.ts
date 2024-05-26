@@ -8,8 +8,11 @@ fixture `A set of examples that illustrate how to use TestCafe API`
 
 test('start', async t => {
    await t
+       .expect(page.resultList.visible).ok()
+       .expect(page.resultList.value).eql('')
        .typeText(page.addName, 'test')
        .typeText(page.addParticipantCount, '3')
-       .click(page.addButton);
+       .click(page.addButton)
+       .expect(page.resultList.childElementCount).eql(5);
 });
 

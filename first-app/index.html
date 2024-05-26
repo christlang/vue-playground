@@ -37,7 +37,7 @@
       <button id="add-button" @click="addEvent">Hinzufügen</button>
     </div>
 
-    <div v-for="event in events" :key="event.id">
+    <div id="result-list" v-for="event in events" :key="event.id">
       <event-item :event="event" />
     </div>
   </div>
@@ -86,7 +86,7 @@
     firstApp.component('event-item', {
       props: ['event'],
       template:
-              `<p>
+              `<p id='event-list-element-{{ event.id }}'>
               ID: {{ event.id }}
               <br />
               Name: {{ event.name }}

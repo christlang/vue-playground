@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import Cart from "@/components/Cart.vue";
 </script>
 
 <template>
@@ -13,6 +14,7 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
+    <Cart />
     <TheWelcome />
   </main>
 </template>
