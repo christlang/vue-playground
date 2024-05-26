@@ -1,4 +1,4 @@
-
+:toc:
 
 https://vuejs.org/guide/introduction.html
 
@@ -30,7 +30,6 @@ npm run dev
 Composition API::
 
 Go with Composition API + Single-File Components if you plan to build full applications with Vue.
-
 [source,vue]
 ----
 <script setup>
@@ -54,6 +53,9 @@ onMounted(() => {
   <button @click="increment">Count is: {{ count }}</button>
 </template>
 ----
+
+Directive::
+Directives sind immer mit `v-` geprefixed
 
 Options API::
 
@@ -96,3 +98,89 @@ SFC:: SingleFileComponents -> *.vue
 
 
 == Standalone vue
+
+kann man machen -> siehe link:standalone[standalone].
+
+== Template Syntax
+
+https://vuejs.org/guide/essentials/template-syntax.html
+
+Text Interpoliation::
+[source,html]
+----
+<span>Message: {{ msg }}</span>
+----
+
+Raw HTML::
+v-html Direktive nutzen
+[source,html]
+----
+<p>Using text interpolation: {{ rawHtml }}</p>
+<p>Using v-html directive: <span v-html="rawHtml"></span></p>
+----
+
+Attribute Bindings::
+Um Attribute zu setzen `v-bind` nutzen
+[source,html]
+----
+<div v-bind:id="dynamicId"></div>
+<!-- Kurzschreibweise -->
+<div :id="dynamicId"></div>
+<!-- Ab vue 3.4 -->
+<!-- same as :id="id" -->
+<div :id></div>
+----
+
+JavaScriptExpressions::
+Können in allen interpoliation (mustaches) verwendet werden.
+Und in allen Attribt-Directiven (v-...)
+[source,html]
+----
+{{ number + 1 }}
+
+{{ ok ? 'YES' : 'NO' }}
+
+{{ message.split('').reverse().join('') }}
+
+<div :id="`list-${id}`"></div>
+
+<!-- nicht erlaubt!!!! -->
+<!-- this is a statement, not an expression: -->
+{{ var a = 1 }}
+<!-- flow control won't work either, use ternary expressions -->
+{{ if (ok) { return message } }}
+----
+
+Calling Functions::
+component-exposed Methoden können in allen bindings aufgerufen werden.
+Werden auf jedem Update aufgerufen,
+sollten also keine Seiteneffekte haben.
+[source,html]
+----
+<time :title="toTitleDate(date)" :datetime="date">
+  {{ formatDate(date) }}
+</time>
+
+<!-- shorthand für v-on = @ -->
+<a v-on:click="doSomething"> ... </a>
+<a @click="doSomething"> ... </a>
+----
+
+Dynamic Arguments::
+[source,html]
+----
+<!--
+Note that there are some constraints to the argument expression,
+as explained in the "Dynamic Argument Value Constraints" and "Dynamic Argument Syntax Constraints" sections below.
+-->
+<a v-bind:[attributeName]="url"> ... </a>
+
+<!-- shorthand -->
+<a :[attributeName]="url"> ... </a>
+----
+
+Modifiers::
+
+Bsp:
+* v-on:submit.prevent="onSubmit"
+** prevent ist Modifier
