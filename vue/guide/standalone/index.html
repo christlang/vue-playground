@@ -12,21 +12,46 @@
     }
 </script>
 
-<div id="app">
+<div id="app1">
+    <my-title></my-title>
+    <button @click="count++">count is : {{count}}</button>
+</div>
+
+<div id="app2">
+    <my-title></my-title>
     <button @click="count++">count is : {{count}}</button>
 </div>
 
 <script type="module">
     import { createApp } from 'vue'
+    import MyTitle from "./my-title.js";
 
-    const app = createApp({
+    const app1 = createApp({
         data() {
             return {
                 count: 0
             }
         }
     });
-    app.mount('#app')
+    app1.component('my-title', MyTitle)
+    app1.mount('#app1');
+    app1.config.errorHandler = (err) => {
+        console.log(err);
+    }
+
+    const app2 = createApp({
+        data() {
+            return {
+                count: 0
+            }
+        }
+    });
+    app2.component('my-title', MyTitle)
+    app2.mount('#app2');
+    app2.config.errorHandler = (err) => {
+        console.log(err);
+    }
+
 </script>
 </body>
 </html>
